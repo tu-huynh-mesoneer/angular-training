@@ -1,0 +1,43 @@
+ul {
+    li {
+        list-style: none;
+        position: relative;
+        padding: 3px 0 2px 25px;
+        .badge {
+            position:absolute;
+            // display:inline-block;
+            height: 100%;
+            border: black;
+            margin: 0 0 0 -30px;
+        }
+        .name {
+            position:relative;
+            border: black;
+        }
+        .selected {
+            background-color: #797979;
+        }
+    }
+
+    li::before {
+        position: absolute;
+    }
+}
+
+
+button {
+    background-color: #e7e7e7;
+    color: black;
+    border: none;
+    padding: 15px 32px;
+    width: 200px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #797979;
+}

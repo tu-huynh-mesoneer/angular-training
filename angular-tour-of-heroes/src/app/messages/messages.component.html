@@ -1,7 +1,9 @@
-<div *ngIf="messageService.messages.length">
-
-    <h2>Messages</h2>
-    <button type="button" class="clear" (click)="messageService.clear()">Clear messages</button>
+<!-- message -->
+<div class="msg animate slide-in-down" [class.active]="messageService.isActive"
+    [ngClass]="{'msg-success': messageService.isActive && (messageService.status === MessageStatus.success || !messageService.status)}"
+    [ngClass]="{'msg-danger': messageService.isActive && messageService.status === MessageStatus.danger}"
+    [ngClass]="{'msg-warning': messageService.isActive && messageService.status === MessageStatus.warning}"
+    [ngClass]="{'msg-info': messageService.isActive && messageService.status === MessageStatus.info}">
     <div *ngFor='let message of messageService.messages'> {{message}} </div>
-
 </div>
+<!-- end message -->

@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,12 @@ export class AppComponent implements OnInit, OnDestroy {
   intervalSub: any;
   title = 'angular tour of heroes';
 
+  constructor(private titleService:Title){
+    this.titleService.setTitle($localize`${this.title}`)
+  }
 
   ngOnInit(): void {
-    // this.intervalSub = setInterval(() => {
-    //   console.log('Hello from ngOnInit')
-    // }, 1000)
+
   }
 
   ngOnDestroy(): void {

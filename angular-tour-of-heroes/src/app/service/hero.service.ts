@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Hero } from './hero';
+import { Hero } from '../hero';
 import { catchError, Observable, retry, tap, throwError } from 'rxjs';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { MessageService } from './message.service';
+import { MessageStatus } from '../enums/MessageStatus.enum';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,9 +22,9 @@ export class HeroService {
   getHeroes(): Observable<Hero[]> {
     const heroesReq = this.http.get<Hero[]>(this.heroUrl).pipe(
       retry(3), // retry a failed request up to 3 times
+      tap(_ => this.log(`fetched heroes`)),
       catchError(this.handleError) // then handle the error
     );
-    this.messageService.add('HeroService: fetched heroes');
     return heroesReq;
   }
 
@@ -78,7 +79,7 @@ export class HeroService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {  
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`HeroService: ${message}`, MessageStatus.success);
   }
 
 }

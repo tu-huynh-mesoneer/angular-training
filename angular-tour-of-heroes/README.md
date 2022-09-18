@@ -29,7 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Internationalization: https://angular.io/guide/i18n-overview
 $ ng add @angular/localize
 Add config in: angular.json
+
 ![angular.json](img_note/i18n-1.png)
+
 ![angular.json](img_note/i18n-2.png)
 
 $ ng extract-i18n --output-path src/locale

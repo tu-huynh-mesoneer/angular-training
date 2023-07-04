@@ -1,6 +1,16 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-text);
+    font-family: sans-serif;
+}
+
 body {
     background-color: rgb(230, 230, 230);
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
 }
 
 h1 {

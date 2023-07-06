@@ -1,8 +1,6 @@
+# RxjsAngular
 
-## Basic CLI
-Create new project: `ng new project-name`
-
-Create new component: `ng generate component xyz`
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
 ## Development server
 
